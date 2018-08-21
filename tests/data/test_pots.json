@@ -1,0 +1,32 @@
+{
+    "pots": [
+      {
+        "id": "pot_XXXXXXXXXXXX",
+        "name": "Holiday",
+        "style": "amber",
+        "balance": 0,
+        "currency": "GBP",
+        "type": "default",
+        "minimum_balance": -1,
+        "maximum_balance": -1,
+        "round_up": false,
+        "created": "2018-01-11T23:35:40.965Z",
+        "updated": "2018-01-19T14:58:32.557Z",
+        "deleted": true
+      },
+      {
+        "id": "pot_YYYYYYYYYYYY",
+        "name": "House",
+        "style": "yacht",
+        "balance": 300000,
+        "currency": "GBP",
+        "type": "default",
+        "minimum_balance": -1,
+        "maximum_balance": -1,
+        "round_up": false,
+        "created": "2017-02-19T00:19:22.621Z",
+        "updated": "2018-08-24T10:45:22.672Z",
+        "deleted": false
+      }
+    ]
+  }

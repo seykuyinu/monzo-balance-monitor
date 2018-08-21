@@ -1,0 +1,9 @@
+{
+    "balance": 1234,
+    "total_balance": 56789,
+    "currency": "GBP",
+    "spend_today": 100,
+    "local_currency": "",
+    "local_exchange_rate": 0,
+    "local_spend": []
+  }

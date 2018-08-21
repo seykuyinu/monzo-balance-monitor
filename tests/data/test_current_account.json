@@ -1,0 +1,20 @@
+{
+    "accounts": [
+      {
+        "id": "acc_XXXXXXXXXXX",
+        "closed": false,
+        "created": "2017-01-01T07:00:00.000Z",
+        "description": "John James Smith",
+        "account_number": "12345678",
+        "sort_code": "000000",
+        "type": "uk_retail",
+        "owners": [
+          {
+            "user_id": "user_XXXXXXXXXXXXXX",
+            "preferred_name": "JJ",
+            "preferred_first_name": "John"
+          }
+        ]
+      }
+    ]
+  }
