@@ -1,31 +1,25 @@
 # Python wrapper for Monzo api
+
 import os
 import requests
-# from monzo_balance_monitor.log_http import log_request
 import logging
 from monzo_balance_monitor.helper import get_account_id
 from monzo_balance_monitor.helper import get_spending_pot_id
 
-# IN CONFIG?
-API_URL = "https://api.monzo.com"
-
-current_account_type = "uk_retail"
-
+api_url = os.environ['MONZO_API_URL']
 auth_token = os.environ['MONZO_AUTH_TOKEN']
-
+current_account_type = "uk_retail"
 headers = {"authorization": f"Bearer {auth_token}"}
 
-# TODO: error handling for the non-200 codes!
-# wrapper for requests? otherwise duplicating error handling!
-
-
 def get_current_account():
-    url = f"{API_URL}/accounts"
+    """
+        Returns the current account associated with the given user account.
+    """
+    url = f"{api_url}/accounts"
     params = {'account_type': current_account_type}
-    # log_request(url,"GET",headers)
+
     response = requests.get(url=url, params=params, headers=headers)
 
-    # unit test this does what you want
     response.raise_for_status()
 
     return response.json()
@@ -34,10 +28,13 @@ def get_current_account():
 def get_account_balance(account_id):
     """
         Returns the balance of the account matching the given account id
+
+        Keyword arguments:
+        account_id - id of the account to retrieve balance
     """
-    url = f"{API_URL}/balance"
+    url = f"{api_url}/balance"
     params = {'account_id': account_id}
-    # log_request(url,"GET",headers)
+
     response = requests.get(url, params=params, headers=headers)
     response.raise_for_status()
 
@@ -47,17 +44,13 @@ def get_account_balance(account_id):
 
 
 def get_pots_list():
-    url = f"{API_URL}/pots"
-    # log_request(url,"GET",headers)
+    """
+        Returns the list of pots associated with the given user account.
+    """
+
+    url = f"{api_url}/pots"
+
     response = requests.get(url, headers=headers)
     response.raise_for_status()
 
     return response.json()
-
-
-# def withdraw_from_pot():
-#     url = 
-
-if __name__ == "__main__":
-    pots_list = get_pots_list()
-    get_spending_pot_id(pots_list)
