@@ -1,7 +1,7 @@
 {
     "accounts": [
       {
-        "id": "acc_XXXXXXXXXXX",
+        "id": "user_XXXXXXXXXXXXXXXXXXXXXX",
         "closed": false,
         "created": "2017-01-01T07:00:00.000Z",
         "description": "John James Smith",
@@ -10,7 +10,7 @@
         "type": "uk_retail",
         "owners": [
           {
-            "user_id": "user_XXXXXXXXXXXXXX",
+            "user_id": "user_XXXXXXXXXXXXXXXXXXXXXX",
             "preferred_name": "JJ",
             "preferred_first_name": "John"
           }
