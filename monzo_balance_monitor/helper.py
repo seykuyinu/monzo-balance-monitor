@@ -10,3 +10,11 @@ def get_spending_pot_id(pots_dict, pot_name):
     else:
         return spending_pot[0]['id']
 
+def get_account_id(accounts):
+    # assumes only one current account
+    account = accounts.get('accounts')[0]
+
+    return account['id']
+
+def format_account_balance(balance):
+    return balance / 100

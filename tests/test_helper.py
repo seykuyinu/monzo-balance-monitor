@@ -1,7 +1,7 @@
 import pytest
 import json
 
-from monzo_balance_monitor.helper import get_spending_pot_id
+from monzo_balance_monitor.helper import get_spending_pot_id, get_account_id, format_account_balance
 
 class TestHelper(object):
 
@@ -29,3 +29,32 @@ class TestHelper(object):
 
         # Then
         assert spending_pot_id == None
+
+    def test_get_account_id(self, shared_datadir):
+        # Given
+        current_account = json.loads((shared_datadir / 'test_current_account.json').read_text())
+        expected_account_id = current_account['accounts'][0]['id']
+
+        # When
+        account_id = get_account_id(current_account)
+
+        # Then
+        assert account_id == expected_account_id
+
+    def test_format_account_balance(self):
+        # Given
+        test_scenarios = [
+            (100, 1),
+            (59, 0.59),
+            (340000, 3400),
+        ]
+
+        for scenario in test_scenarios:
+            balance = scenario[0]
+            expected = scenario[1]
+
+            # When
+            formatted_balance = format_account_balance(balance)
+
+            # Then
+            assert formatted_balance == expected
